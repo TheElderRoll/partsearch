@@ -25,6 +25,13 @@ namespace partsearch.Domain.Repositories.EntityFramework
             return context.Parts.FirstOrDefault(x => x.Id == id);
         }
 
+        public IQueryable<Part> GetPartsByCode(string code)
+        {
+            System.Diagnostics.Debug.WriteLine(code);
+            System.Diagnostics.Trace.WriteLine(code);
+            return context.Parts.Where(x => x.Code == code);
+        }
+
         public void SavePart(Part entity)
         {
             if (entity.Id == default)

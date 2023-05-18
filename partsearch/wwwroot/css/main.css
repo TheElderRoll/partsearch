@@ -1,5 +1,5 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800");
-@import url("../sass/fontawesome-all.min.css");
+@import url("fontawesome-all.min.css");
 /*
 	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
@@ -22,6 +22,24 @@ section, summary, time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+.part-left li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+}
+
+.grid-item {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-right: 10vw;
 }
 
 article, aside, details, figcaption, figure,
@@ -64,14 +82,61 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-/*input, select, textarea {
+input, select, textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-}*/
+}
 
 /* Basic */
+body {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #293042;
+  border-right: none;
+  padding: 5px;
+  height: 4vh;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 2vh;
+}
+
+.searchTerm:focus {
+  color: #293042;
+}
+
+.searchButton {
+  width: 100px;
+  height: 4vh;
+  border: 1px solid #293042;
+  background: #293042;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1vh;
+}
+
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -84,7 +149,7 @@ html {
   width: device-width;
 }
 body {
-  background: #303238 url("../images/bg01.png");
+  background: #303238;
 }
 body.is-preload * {
   -moz-transition: none !important;
@@ -1098,6 +1163,11 @@ table.default thead {
 }
 
 /* Image */
+.part-left {
+  max-width: 400px;
+  border-radius: 15px;
+}
+
 .image {
   position: relative;
   display: inline-block;

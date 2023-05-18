@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Search\Controllers\" />
+    <Folder Include="Areas\Search\Views\" />
     <Folder Include="Models\ViewComponents\" />
   </ItemGroup>
 

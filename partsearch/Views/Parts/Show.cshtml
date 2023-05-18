@@ -1,0 +1,30 @@
+﻿@model Part
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+<div>
+    <h2>
+        @Model.Title
+    </h2>
+    <h3>
+        @Model.Subtitle
+    </h3>
+    <div>
+        <img class="part-left img-block" src="~/images/@Model.TitleImagePath" />
+    </div>
+    <h3>
+        Артикул: @Model.Code
+    </h3>
+    <h3>
+        Цена: @Model.Cost руб.
+    </h3>
+    <p>
+        Дата добавления: @Model.DateAdded
+    </p>
+    <div>
+        @Html.Raw(Model.Text)
+    </div>
+</div>

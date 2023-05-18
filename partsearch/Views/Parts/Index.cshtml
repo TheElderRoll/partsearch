@@ -1,0 +1,33 @@
+﻿@model IQueryable<Part>
+
+<form class="search" method="post">
+    <input type="text" class="searchTerm" placeholder="Введите артикул" name="code">
+    <button type="submit" class="searchButton" asp-area="" asp-controller="Parts" asp-action="FindByCode" asp-route-code="@ViewData["code"]">
+        <span class="material-symbols-outlined">
+            Найти
+        </span>
+    </button>
+</form>
+
+<div>
+    @if (Model.Any())
+    {
+        <div>
+
+            <div class="grid-container">
+                @foreach (Part entity in Model)
+                {
+                    <div class="grid-item">
+                        <a asp-area="" asp-controller="Parts" asp-action="Index" asp-route-id="@entity.Id">
+                            <img src="~/images/@entity.TitleImagePath" alt="" class="part-left image" />
+                        </a>
+                        <div class="part-info">
+                            <h4>@entity.Title</h4>
+                            <p>@entity.Subtitle</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
